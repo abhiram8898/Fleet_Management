@@ -1,0 +1,183 @@
+[
+  {
+    "id": "S1001",
+    "name": "Alice Brown",
+    "grade": "5th Grade",
+    "busId": "BUS-001",
+    "pickup": "Vypin Jetty",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S1002",
+    "name": "Bob Miller",
+    "grade": "3rd Grade",
+    "busId": "BUS-001",
+    "pickup": "Goshree Bridge",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S1003",
+    "name": "Charlie Davis",
+    "grade": "7th Grade",
+    "busId": "BUS-001",
+    "pickup": "High Court Jn",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S1004",
+    "name": "Daisy Evans",
+    "grade": "2nd Grade",
+    "busId": "BUS-001",
+    "pickup": "MG Road Central",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S1005",
+    "name": "Ethan Foster",
+    "grade": "6th Grade",
+    "busId": "BUS-001",
+    "pickup": "Vypin Jetty",
+    "drop": "Kochi International Academy",
+    "status": "Not Picked"
+  },
+  {
+    "id": "S1006",
+    "name": "Fiona Green",
+    "grade": "4th Grade",
+    "busId": "BUS-001",
+    "pickup": "Goshree Bridge",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S1007",
+    "name": "George Harris",
+    "grade": "8th Grade",
+    "busId": "BUS-001",
+    "pickup": "High Court Jn",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S1008",
+    "name": "Hannah Irwin",
+    "grade": "1st Grade",
+    "busId": "BUS-001",
+    "pickup": "MG Road Central",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S1009",
+    "name": "Ian Jackson",
+    "grade": "9th Grade",
+    "busId": "BUS-001",
+    "pickup": "Vypin Jetty",
+    "drop": "Kochi International Academy",
+    "status": "Not Picked"
+  },
+  {
+    "id": "S1010",
+    "name": "Jenny Kelly",
+    "grade": "5th Grade",
+    "busId": "BUS-001",
+    "pickup": "High Court Jn",
+    "drop": "Kochi International Academy",
+    "status": "Not Picked"
+  },
+
+  {
+    "id": "S2001",
+    "name": "Kevin Lee",
+    "grade": "3rd Grade",
+    "busId": "BUS-002",
+    "pickup": "Kakkanad Jn",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S2002",
+    "name": "Laura Moore",
+    "grade": "7th Grade",
+    "busId": "BUS-002",
+    "pickup": "Civil Station",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S2003",
+    "name": "Mike Nelson",
+    "grade": "4th Grade",
+    "busId": "BUS-002",
+    "pickup": "Palarivattom Jn",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S2004",
+    "name": "Nina Oliver",
+    "grade": "2nd Grade",
+    "busId": "BUS-002",
+    "pickup": "Kadavanthra Jn",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S2005",
+    "name": "Oscar Perry",
+    "grade": "6th Grade",
+    "busId": "BUS-002",
+    "pickup": "Kakkanad Jn",
+    "drop": "Kochi International Academy",
+    "status": "Not Picked"
+  },
+  {
+    "id": "S2006",
+    "name": "Paula Quinn",
+    "grade": "8th Grade",
+    "busId": "BUS-002",
+    "pickup": "Civil Station",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S2007",
+    "name": "Quinn Ross",
+    "grade": "1st Grade",
+    "busId": "BUS-002",
+    "pickup": "Palarivattom Jn",
+    "drop": "Kochi International Academy",
+    "status": "Picked"
+  },
+  {
+    "id": "S2008",
+    "name": "Ray Smith",
+    "grade": "9th Grade",
+    "busId": "BUS-002",
+    "pickup": "Kadavanthra Jn",
+    "drop": "Kochi International Academy",
+    "status": "Not Picked"
+  },
+  {
+    "id": "S2009",
+    "name": "Sarah Taylor",
+    "grade": "5th Grade",
+    "busId": "BUS-002",
+    "pickup": "Palarivattom Jn",
+    "drop": "Kochi International Academy",
+    "status": "Not Picked"
+  },
+  {
+    "id": "S2010",
+    "name": "Tom Usher",
+    "grade": "3rd Grade",
+    "busId": "BUS-002",
+    "pickup": "Civil Station",
+    "drop": "Kochi International Academy",
+    "status": "Not Picked"
+  }
+]

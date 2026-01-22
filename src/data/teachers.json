@@ -1,0 +1,34 @@
+[
+  {
+    "id": "T101",
+    "name": "Prof. Aruna Nair",
+    "department": "Science",
+    "busId": "BUS-001",
+    "stop": "High Court Jn",
+    "contact": "+91 98765 43210"
+  },
+  {
+    "id": "T102",
+    "name": "Mr. Joseph Kurien",
+    "department": "Mathematics",
+    "busId": "BUS-001",
+    "stop": "Vypin Jetty",
+    "contact": "+91 98765 43211"
+  },
+  {
+    "id": "T201",
+    "name": "Ms. Meera Pillai",
+    "department": "English",
+    "busId": "BUS-002",
+    "stop": "Civil Station",
+    "contact": "+91 98765 43212"
+  },
+  {
+    "id": "T202",
+    "name": "Dr. Sameer Khan",
+    "department": "History",
+    "busId": "BUS-002",
+    "stop": "Palarivattom Jn",
+    "contact": "+91 98765 43213"
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "R-101",
+    "name": "Coastal Morning Route",
+    "busId": "BUS-001",
+    "studentCount": 10,
+    "stops": [
+      {
+        "name": "Vypin Jetty",
+        "time": "07:00 AM",
+        "lat": 9.987,
+        "lng": 76.245
+      },
+      {
+        "name": "Goshree Bridge",
+        "time": "07:15 AM",
+        "lat": 9.985,
+        "lng": 76.265
+      },
+      {
+        "name": "High Court Jn",
+        "time": "07:30 AM",
+        "lat": 9.981,
+        "lng": 76.274
+      },
+      {
+        "name": "MG Road Central",
+        "time": "07:45 AM",
+        "lat": 9.97,
+        "lng": 76.285
+      },
+      {
+        "name": "Kochi International Academy",
+        "time": "08:15 AM",
+        "lat": 9.9625,
+        "lng": 76.2995
+      }
+    ]
+  },
+  {
+    "id": "R-102",
+    "name": "Eastern Morning Route",
+    "busId": "BUS-002",
+    "studentCount": 10,
+    "stops": [
+      {
+        "name": "Kakkanad Jn",
+        "time": "07:10 AM",
+        "lat": 10.015,
+        "lng": 76.34
+      },
+      {
+        "name": "Civil Station",
+        "time": "07:25 AM",
+        "lat": 10.01,
+        "lng": 76.328
+      },
+      {
+        "name": "Palarivattom Jn",
+        "time": "07:40 AM",
+        "lat": 10.003,
+        "lng": 76.307
+      },
+      {
+        "name": "Kadavanthra Jn",
+        "time": "07:55 AM",
+        "lat": 9.968,
+        "lng": 76.315
+      },
+      {
+        "name": "Kochi International Academy",
+        "time": "08:10 AM",
+        "lat": 9.9625,
+        "lng": 76.2995
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "BUS-001",
+    "number": "B001",
+    "driver": "John Doe",
+    "route": "North Route",
+    "status": "On Route",
+    "lastUpdated": "Just now",
+    "contactNumber": "+91 99887 76655"
+  },
+  {
+    "id": "BUS-002",
+    "number": "B002",
+    "driver": "Jane Smith",
+    "route": "South Route",
+    "status": "On Route",
+    "lastUpdated": "Just now",
+    "contactNumber": "+91 98765 43210"
+  }
+]
