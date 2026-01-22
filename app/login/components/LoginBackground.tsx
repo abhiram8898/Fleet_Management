@@ -45,15 +45,15 @@ const LoginBackground = () => {
       </div>
 
       {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 -left-24 w-96 h-96 bg-linear-to-r from-blue-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10 animate-pulse pointer-events-none"></div>
-      <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-linear-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10 animate-pulse animation-delay-1000 pointer-events-none"></div>
-      <div className="absolute top-3/4 left-1/2 -translate-x-1/2 w-80 h-80 bg-linear-to-r from-green-400 to-emerald-400 rounded-full mix-blend-multiply filter blur-3xl opacity-15 dark:opacity-10 animate-pulse animation-delay-2000 pointer-events-none"></div>
+      <div className="absolute top-1/4 -left-24 w-96 h-96 bg-linear-to-r from-blue-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse pointer-events-none"></div>
+      <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-linear-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-1000 pointer-events-none"></div>
+      <div className="absolute top-3/4 left-1/2 -translate-x-1/2 w-80 h-80 bg-linear-to-r from-green-400 to-emerald-400 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse animation-delay-2000 pointer-events-none"></div>
 
       {/* Floating icons */}
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute top-10 right-10 p-3 bg-white/80 dark:bg-gray-800/80  rounded-2xl shadow-2xl border border-gray-200/20 pointer-events-none"
+        className="absolute top-10 right-10 p-3 bg-white/80 rounded-2xl shadow-2xl border border-gray-200/20 pointer-events-none"
       >
         <div className={icons[activeIcon].color}>{icons[activeIcon].icon}</div>
       </motion.div>

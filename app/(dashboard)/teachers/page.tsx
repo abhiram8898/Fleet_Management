@@ -152,10 +152,10 @@ export default function TeachersPage() {
       <div className="max-w-7xl mx-auto space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">
               Teachers
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 mt-1">
+            <p className="text-gray-500 mt-1">
               Manage faculty transportation assignments
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function TeachersPage() {
             <input
               type="text"
               placeholder="Search teachers or departments..."
-              className="w-full pl-10 pr-4 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-sm text-gray-900 dark:text-white placeholder:text-gray-400 shadow-sm"
+              className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-sm text-gray-900 placeholder:text-gray-400 shadow-sm"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -192,7 +192,7 @@ export default function TeachersPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="appearance-none pl-10 pr-10 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl outline-none cursor-pointer text-sm font-medium text-gray-900 dark:text-white shadow-sm focus:ring-2 focus:ring-indigo-500/50 transition-all min-w-[170px]"
+              className="appearance-none pl-10 pr-10 py-3 bg-white border border-gray-200 rounded-xl outline-none cursor-pointer text-sm font-medium text-gray-900 shadow-sm focus:ring-2 focus:ring-indigo-500/50 transition-all min-w-[170px]"
             >
               <option value="All">All Departments</option>
               <option value="Science">Science</option>
@@ -207,7 +207,7 @@ export default function TeachersPage() {
           {filteredTeachers.map((teacher) => (
             <div
               key={teacher.id}
-              className="group bg-white/80 dark:bg-gray-900/60  p-3 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-indigo-500/50 shadow-sm hover:shadow-lg transition-all duration-300"
+              className="group bg-white/80 p-3 rounded-2xl border border-gray-200 hover:border-indigo-500/50 shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center space-x-3">
@@ -215,40 +215,38 @@ export default function TeachersPage() {
                     <User size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                       {teacher.name}
                     </h3>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 font-medium flex items-center mt-0.5">
+                    <p className="text-xs text-gray-500 font-medium flex items-center mt-0.5">
                       <Briefcase size={12} className="mr-1" />
                       {teacher.department}
                     </p>
                   </div>
                 </div>
-                <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1 transition-colors">
+                <button className="text-gray-400 hover:text-gray-600 p-1 transition-colors">
                   <MoreVertical size={18} />
                 </button>
               </div>
 
-              <div className="space-y-3 pt-3 border-t border-gray-100 dark:border-gray-800">
-                <div className="flex items-center text-xs text-gray-500 dark:text-gray-400">
+              <div className="space-y-3 pt-3 border-t border-gray-100">
+                <div className="flex items-center text-xs text-gray-500">
                   <Bus size={14} className="mr-2.5 text-indigo-600" />
-                  <span className="font-semibold text-gray-700 dark:text-gray-300 mr-2">
-                    Bus:
-                  </span>
-                  <span className="font-mono bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-gray-900 dark:text-white">
+                  <span className="font-semibold text-gray-700 mr-2">Bus:</span>
+                  <span className="font-mono bg-gray-100 px-1.5 py-0.5 rounded text-gray-900">
                     {teacher.busId}
                   </span>
                 </div>
-                <div className="flex items-center text-xs text-gray-500 dark:text-gray-400">
+                <div className="flex items-center text-xs text-gray-500">
                   <MapPin size={14} className="mr-2.5 text-rose-500" />
-                  <span className="font-semibold text-gray-700 dark:text-gray-300 mr-2">
+                  <span className="font-semibold text-gray-700 mr-2">
                     Stop:
                   </span>
                   <span className="truncate">{teacher.stop}</span>
                 </div>
-                <div className="flex items-center text-xs text-gray-500 dark:text-gray-400">
+                <div className="flex items-center text-xs text-gray-500">
                   <Phone size={14} className="mr-2.5 text-emerald-500" />
-                  <span className="font-semibold text-gray-700 dark:text-gray-300 mr-2">
+                  <span className="font-semibold text-gray-700 mr-2">
                     Contact:
                   </span>
                   <span className="font-mono">{teacher.contact}</span>
@@ -258,11 +256,11 @@ export default function TeachersPage() {
               <div className="flex gap-2 mt-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                 <button
                   onClick={() => handleEditClick(teacher)}
-                  className="flex-1 flex items-center justify-center p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-indigo-600 hover:text-white transition-all text-xs font-bold shadow-sm"
+                  className="flex-1 flex items-center justify-center p-2 rounded-lg bg-gray-100 text-gray-700 hover:bg-indigo-600 hover:text-white transition-all text-xs font-bold shadow-sm"
                 >
                   <Edit2 size={14} className="mr-1.5" /> Edit
                 </button>
-                <button className="flex-1 flex items-center justify-center p-2 rounded-lg bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400 hover:bg-red-600 hover:text-white transition-all text-xs font-bold shadow-sm">
+                <button className="flex-1 flex items-center justify-center p-2 rounded-lg bg-red-50 text-red-600 hover:bg-red-600 hover:text-white transition-all text-xs font-bold shadow-sm">
                   <Trash2 size={14} className="mr-1.5" /> Remove
                 </button>
               </div>
@@ -278,7 +276,7 @@ export default function TeachersPage() {
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider px-1">
+                <label className="text-xs font-bold text-gray-500 uppercase tracking-wider px-1">
                   Full Name
                 </label>
                 <input
@@ -287,12 +285,12 @@ export default function TeachersPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full p-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900 dark:text-white"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
                   placeholder="e.g. Prof. Aruna"
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider px-1">
+                <label className="text-xs font-bold text-gray-500 uppercase tracking-wider px-1">
                   Department
                 </label>
                 <input
@@ -301,14 +299,14 @@ export default function TeachersPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, department: e.target.value })
                   }
-                  className="w-full p-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900 dark:text-white"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
                   placeholder="e.g. Science"
                 />
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider px-1">
+                <label className="text-xs font-bold text-gray-500 uppercase tracking-wider px-1">
                   Subject
                 </label>
                 <input
@@ -317,12 +315,12 @@ export default function TeachersPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, subject: e.target.value })
                   }
-                  className="w-full p-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900 dark:text-white"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
                   placeholder="e.g. Physics"
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider px-1">
+                <label className="text-xs font-bold text-gray-500 uppercase tracking-wider px-1">
                   Email
                 </label>
                 <input
@@ -331,14 +329,14 @@ export default function TeachersPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full p-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900 dark:text-white"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
                   placeholder="prof@example.com"
                 />
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider px-1">
+                <label className="text-xs font-bold text-gray-500 uppercase tracking-wider px-1">
                   Bus Assignment
                 </label>
                 <select
@@ -346,7 +344,7 @@ export default function TeachersPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, busId: e.target.value })
                   }
-                  className="w-full p-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900 dark:text-white"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
                 >
                   <option value="">Select Bus</option>
                   {busesData.map((bus) => (
@@ -357,7 +355,7 @@ export default function TeachersPage() {
                 </select>
               </div>
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider px-1">
+                <label className="text-xs font-bold text-gray-500 uppercase tracking-wider px-1">
                   Pickup Stop
                 </label>
                 <input
@@ -366,13 +364,13 @@ export default function TeachersPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, stop: e.target.value })
                   }
-                  className="w-full p-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900 dark:text-white"
+                  className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
                   placeholder="e.g. High Court Jn"
                 />
               </div>
             </div>
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider px-1">
+              <label className="text-xs font-bold text-gray-500 uppercase tracking-wider px-1">
                 Contact
               </label>
               <input
@@ -381,7 +379,7 @@ export default function TeachersPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, contact: e.target.value })
                 }
-                className="w-full p-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900 dark:text-white"
+                className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
                 placeholder="+91..."
               />
             </div>
@@ -396,7 +394,7 @@ export default function TeachersPage() {
               />
               <label
                 htmlFor="sameAsPickupTeacher"
-                className="text-xs font-bold text-gray-600 dark:text-gray-300 uppercase tracking-wide"
+                className="text-xs font-bold text-gray-600 uppercase tracking-wide"
               >
                 Drop location same as Pickup
               </label>
@@ -404,7 +402,7 @@ export default function TeachersPage() {
 
             <div className="pt-4 flex gap-3">
               <button
-                className="flex-1 py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold rounded-xl text-sm active:scale-95 transition-all hover:bg-gray-200 dark:hover:bg-gray-700"
+                className="flex-1 py-3 bg-gray-100 text-gray-700 font-bold rounded-xl text-sm active:scale-95 transition-all hover:bg-gray-200"
                 onClick={() => setIsModalOpen(false)}
               >
                 Cancel

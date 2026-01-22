@@ -172,10 +172,10 @@ export default function StudentsPage() {
       <div className="max-w-7xl mx-auto space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">
               Students
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 mt-1">
+            <p className="text-gray-500 mt-1">
               Manage student transport assignments and status
             </p>
           </div>
@@ -203,7 +203,7 @@ export default function StudentsPage() {
               placeholder="Search by name or student ID..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-sm text-gray-900 dark:text-white placeholder:text-gray-400 shadow-sm"
+              className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-sm text-gray-900 placeholder:text-gray-400 shadow-sm"
             />
           </div>
           <div className="relative">
@@ -213,7 +213,7 @@ export default function StudentsPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="appearance-none pl-10 pr-10 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl outline-none cursor-pointer text-sm font-medium text-gray-900 dark:text-white shadow-sm focus:ring-2 focus:ring-indigo-500/50 transition-all min-w-[160px]"
+              className="appearance-none pl-10 pr-10 py-3 bg-white border border-gray-200 rounded-xl outline-none cursor-pointer text-sm font-medium text-gray-900 shadow-sm focus:ring-2 focus:ring-indigo-500/50 transition-all min-w-[160px]"
             >
               <option value="All">All Statuses</option>
               <option value="Picked">Picked</option>
@@ -228,7 +228,7 @@ export default function StudentsPage() {
           {filteredStudents.map((student) => (
             <div
               key={student.id}
-              className="group bg-white/80 dark:bg-gray-900/60  p-3 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-indigo-500/50 dark:hover:border-indigo-500/50 hover:shadow-lg transition-all duration-300 flex flex-col space-y-4"
+              className="group bg-white/80 p-3 rounded-2xl border border-gray-200 hover:border-indigo-500/50 hover:shadow-lg transition-all duration-300 flex flex-col space-y-4"
             >
               <div className="flex justify-between items-start">
                 <div className="flex items-center space-x-3">
@@ -236,10 +236,10 @@ export default function StudentsPage() {
                     {student.name[0]}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                       {student.name}
                     </h3>
-                    <div className="flex items-center text-xs text-gray-500 dark:text-gray-400 font-medium space-x-2 mt-0.5">
+                    <div className="flex items-center text-xs text-gray-500 font-medium space-x-2 mt-0.5">
                       <span className="flex items-center">
                         <GraduationCap size={12} className="mr-1" />
                         {student.grade}
@@ -252,38 +252,32 @@ export default function StudentsPage() {
                 <span
                   className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm ${
                     student.status === "Picked"
-                      ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400"
+                      ? "bg-emerald-100 text-emerald-700"
                       : student.status === "Not Picked"
-                        ? "bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400"
-                        : "bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400"
+                        ? "bg-amber-100 text-amber-700"
+                        : "bg-blue-100 text-blue-700"
                   }`}
                 >
                   {student.status}
                 </span>
               </div>
 
-              <div className="p-3 bg-gray-50/50 dark:bg-gray-800/50 rounded-xl space-y-2.5 border border-gray-100 dark:border-gray-800/50">
+              <div className="p-3 bg-gray-50/50 rounded-xl space-y-2.5 border border-gray-100">
                 <div className="flex justify-between text-xs">
-                  <span className="text-gray-500 dark:text-gray-400 font-medium">
-                    Bus ID
-                  </span>
-                  <span className="text-gray-900 dark:text-white font-semibold">
+                  <span className="text-gray-500 font-medium">Bus ID</span>
+                  <span className="text-gray-900 font-semibold">
                     {student.busId}
                   </span>
                 </div>
                 <div className="flex justify-between text-xs">
-                  <span className="text-gray-500 dark:text-gray-400 font-medium">
-                    Pickup
-                  </span>
-                  <span className="text-gray-900 dark:text-white font-medium text-right truncate ml-4">
+                  <span className="text-gray-500 font-medium">Pickup</span>
+                  <span className="text-gray-900 font-medium text-right truncate ml-4">
                     {student.pickup}
                   </span>
                 </div>
                 <div className="flex justify-between text-xs">
-                  <span className="text-gray-500 dark:text-gray-400 font-medium">
-                    Drop
-                  </span>
-                  <span className="text-gray-900 dark:text-white font-medium text-right truncate ml-4">
+                  <span className="text-gray-500 font-medium">Drop</span>
+                  <span className="text-gray-900 font-medium text-right truncate ml-4">
                     {student.drop}
                   </span>
                 </div>
@@ -293,26 +287,26 @@ export default function StudentsPage() {
                 <div className="flex space-x-2">
                   <button
                     onClick={() => handleContact(student.name, "mail")}
-                    className="p-2 bg-gray-100 dark:bg-gray-800 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-600 rounded-lg text-gray-500 dark:text-gray-400 transition-colors"
+                    className="p-2 bg-gray-100 hover:bg-indigo-500 hover:text-white rounded-lg text-gray-500 transition-colors"
                   >
                     <Mail size={16} />
                   </button>
                   <button
                     onClick={() => handleContact(student.name, "phone")}
-                    className="p-2 bg-gray-100 dark:bg-gray-800 hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-600 rounded-lg text-gray-500 dark:text-gray-400 transition-colors"
+                    className="p-2 bg-gray-100 hover:bg-emerald-500 hover:text-white rounded-lg text-gray-500 transition-colors"
                   >
                     <Phone size={16} />
                   </button>
                   <button
                     onClick={() => handleEditClick(student)}
-                    className="p-2 bg-gray-100 dark:bg-gray-800 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-600 rounded-lg text-gray-500 dark:text-gray-400 transition-colors"
+                    className="p-2 bg-gray-100 hover:bg-amber-500 hover:text-white rounded-lg text-gray-500 transition-colors"
                   >
                     <Edit2 size={16} />
                   </button>
                 </div>
                 <button
                   onClick={() => alert(`Showing details for ${student.name}`)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors p-1"
+                  className="text-gray-400 hover:text-gray-600 transition-colors p-1"
                 >
                   <MoreHorizontal size={20} />
                 </button>
@@ -322,10 +316,10 @@ export default function StudentsPage() {
         </div>
         {filteredStudents.length === 0 && (
           <div className="py-20 text-center">
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+            <h3 className="text-lg font-medium text-gray-900">
               No students found
             </h3>
-            <p className="text-gray-500 dark:text-gray-400 mt-1">
+            <p className="text-gray-500 mt-1">
               Try adjusting your search or filters
             </p>
           </div>
@@ -340,7 +334,7 @@ export default function StudentsPage() {
         <form onSubmit={handleSaveStudent} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Student Name
               </label>
               <input
@@ -349,13 +343,13 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900 dark:text-white"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
                 placeholder="e.g. John Doe"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Grade
               </label>
               <input
@@ -364,13 +358,13 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, grade: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
                 placeholder="e.g. 10th"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Parent Name
               </label>
               <input
@@ -379,12 +373,12 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, parentName: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
                 placeholder="e.g. Robert Doe"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Parent Contact
               </label>
               <input
@@ -393,12 +387,12 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, parentContact: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
                 placeholder="+91..."
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Email Address
               </label>
               <input
@@ -407,12 +401,12 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
                 placeholder="parent@example.com"
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Assigned Bus
               </label>
               <select
@@ -420,7 +414,7 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, busId: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
               >
                 <option value="">Select a Bus</option>
                 {busesData.map((bus) => (
@@ -433,7 +427,7 @@ export default function StudentsPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
               Residential Address
             </label>
             <textarea
@@ -441,15 +435,15 @@ export default function StudentsPage() {
               onChange={(e) =>
                 setFormData({ ...formData, address: e.target.value })
               }
-              className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
               rows={2}
               placeholder="e.g. 123 Main St, Springfield"
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-3 pt-2 border-t border-gray-100 dark:border-gray-800">
+          <div className="grid grid-cols-2 gap-3 pt-2 border-t border-gray-100">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Pickup Point Name
               </label>
               <input
@@ -458,12 +452,12 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, pickup: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
                 placeholder="e.g. Stop A"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Drop Point Name
               </label>
               <input
@@ -472,7 +466,7 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, drop: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
                 placeholder="e.g. Stop B"
               />
             </div>
@@ -488,7 +482,7 @@ export default function StudentsPage() {
             />
             <label
               htmlFor="sameAsPickup"
-              className="text-sm font-medium text-gray-700 dark:text-gray-300"
+              className="text-sm font-medium text-gray-700"
             >
               Drop location same as Pickup
             </label>
@@ -498,7 +492,7 @@ export default function StudentsPage() {
             <button
               type="button"
               onClick={() => setIsModalOpen(false)}
-              className="flex-1 py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold rounded-xl text-sm active:scale-95 transition-all hover:bg-gray-200 dark:hover:bg-gray-700"
+              className="flex-1 py-3 bg-gray-100 text-gray-700 font-bold rounded-xl text-sm active:scale-95 transition-all hover:bg-gray-200"
             >
               Cancel
             </button>

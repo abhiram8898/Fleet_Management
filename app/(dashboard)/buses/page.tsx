@@ -104,10 +104,10 @@ export default function BusesPage() {
       <div className="max-w-7xl mx-auto space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">
               Bus Management
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 mt-1">
+            <p className="text-gray-500 mt-1">
               Total {buses.length} buses registered in the system
             </p>
           </div>
@@ -135,7 +135,7 @@ export default function BusesPage() {
               placeholder="Search by bus number or driver..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-sm text-gray-900 dark:text-white placeholder:text-gray-400 shadow-sm"
+              className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-sm text-gray-900 placeholder:text-gray-400 shadow-sm"
             />
           </div>
           <div className="relative">
@@ -145,7 +145,7 @@ export default function BusesPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="appearance-none pl-10 pr-10 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl outline-none cursor-pointer text-sm font-medium text-gray-900 dark:text-white shadow-sm focus:ring-2 focus:ring-blue-500/50 transition-all min-w-[160px]"
+              className="appearance-none pl-10 pr-10 py-3 bg-white border border-gray-200 rounded-xl outline-none cursor-pointer text-sm font-medium text-gray-900 shadow-sm focus:ring-2 focus:ring-blue-500/50 transition-all min-w-[160px]"
             >
               <option value="All">All Statuses</option>
               <option value="On Route">On Route</option>
@@ -156,62 +156,60 @@ export default function BusesPage() {
         </div>
 
         {/* Bus Table */}
-        <div className="bg-white/80 dark:bg-gray-900/60  rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
+        <div className="bg-white/80 rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="border-b border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/50">
-                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                <tr className="border-b border-gray-200 bg-gray-50/50">
+                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Bus Info
                   </th>
-                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Driver
                   </th>
-                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Route
                   </th>
-                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Status
                   </th>
-                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Last Sync
                   </th>
-                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider text-right">
+                  <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right">
                     Actions
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+              <tbody className="divide-y divide-gray-100">
                 {filteredBuses.map((bus) => (
                   <tr
                     key={bus.id}
-                    className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group"
+                    className="hover:bg-gray-50 transition-colors group"
                   >
                     <td className="px-6 py-4">
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                        <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
                           <Bus size={20} />
                         </div>
                         <div>
-                          <p className="text-sm font-bold text-gray-900 dark:text-white">
+                          <p className="text-sm font-bold text-gray-900">
                             {bus.number}
                           </p>
-                          <p className="text-xs text-gray-500 dark:text-gray-400">
-                            ID: {bus.id}
-                          </p>
+                          <p className="text-xs text-gray-500">ID: {bus.id}</p>
                         </div>
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <p className="text-sm text-gray-900 dark:text-white font-medium">
+                      <p className="text-sm text-gray-900 font-medium">
                         {bus.driver}
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                      <p className="text-xs text-gray-500 mt-0.5">
                         {bus.contactNumber || "N/A"}
                       </p>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
                         {bus.route}
                       </span>
                     </td>
@@ -219,17 +217,17 @@ export default function BusesPage() {
                       <span
                         className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide ${
                           bus.status === "On Route"
-                            ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400"
+                            ? "bg-emerald-100 text-emerald-700"
                             : bus.status === "Idle"
-                              ? "bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400"
-                              : "bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400"
+                              ? "bg-amber-100 text-amber-700"
+                              : "bg-rose-100 text-rose-700"
                         }`}
                       >
                         {bus.status}
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="text-xs text-gray-500 dark:text-gray-400 font-mono">
+                      <span className="text-xs text-gray-500 font-mono">
                         {bus.lastUpdated}
                       </span>
                     </td>
@@ -237,7 +235,7 @@ export default function BusesPage() {
                       <div className="flex items-center justify-end space-x-2">
                         <button
                           onClick={() => handleEditClick(bus)}
-                          className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-all"
+                          className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                         >
                           <Edit2 size={16} />
                         </button>
@@ -245,7 +243,7 @@ export default function BusesPage() {
                           onClick={() =>
                             alert(`Viewing details for ${bus.number}`)
                           }
-                          className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-lg transition-all"
+                          className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
                         >
                           <Eye size={16} />
                         </button>
@@ -258,13 +256,13 @@ export default function BusesPage() {
           </div>
           {filteredBuses.length === 0 && (
             <div className="py-20 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
                 <Search size={32} className="text-gray-400" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+              <h3 className="text-lg font-medium text-gray-900">
                 No buses found
               </h3>
-              <p className="text-gray-500 dark:text-gray-400 mt-1">
+              <p className="text-gray-500 mt-1">
                 Try adjusting your search or filters
               </p>
             </div>
@@ -279,7 +277,7 @@ export default function BusesPage() {
       >
         <form onSubmit={handleSaveBus} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
               Bus Number
             </label>
             <input
@@ -288,13 +286,13 @@ export default function BusesPage() {
               onChange={(e) =>
                 setFormData({ ...formData, number: e.target.value })
               }
-              className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
               placeholder="e.g. KL-07-AW-1234"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
               Driver Name
             </label>
             <input
@@ -303,13 +301,13 @@ export default function BusesPage() {
               onChange={(e) =>
                 setFormData({ ...formData, driver: e.target.value })
               }
-              className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
               placeholder="Full Name"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
               Driver Contact Number
             </label>
             <input
@@ -318,13 +316,13 @@ export default function BusesPage() {
               onChange={(e) =>
                 setFormData({ ...formData, contactNumber: e.target.value })
               }
-              className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
               placeholder="+91 99999 88888"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
               Current Status
             </label>
             <select
@@ -332,7 +330,7 @@ export default function BusesPage() {
               onChange={(e) =>
                 setFormData({ ...formData, status: e.target.value })
               }
-              className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900 dark:text-white"
+              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
             >
               <option value="Idle">Idle</option>
               <option value="On Route">On Route</option>
@@ -343,7 +341,7 @@ export default function BusesPage() {
             <button
               type="button"
               onClick={() => setIsModalOpen(false)}
-              className="flex-1 py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold rounded-xl text-sm active:scale-95 transition-all hover:bg-gray-200 dark:hover:bg-gray-700"
+              className="flex-1 py-3 bg-gray-100 text-gray-700 font-bold rounded-xl text-sm active:scale-95 transition-all hover:bg-gray-200"
             >
               Cancel
             </button>

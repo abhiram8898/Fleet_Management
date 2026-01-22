@@ -14,7 +14,6 @@ import "leaflet/dist/leaflet.css";
 import routesData from "@/src/data/routes.json";
 import studentsData from "@/src/data/students.json";
 import teachersData from "@/src/data/teachers.json";
-import { useTheme } from "next-themes";
 
 // Define Type for routing data
 type RouteCoords = [number, number][];
@@ -73,7 +72,6 @@ export default function TrackingMap({
 }: {
   activeBusId: string | null;
 }) {
-  const { theme } = useTheme();
   const [positions, setPositions] = useState<Record<string, number>>({
     "BUS-001": 0,
     "BUS-002": 10, // Offset start
@@ -148,11 +146,9 @@ export default function TrackingMap({
 
   const activePos = activeBusId === "BUS-002" ? bus2Pos : bus1Pos;
 
-  // Dynamic Tile URL based on theme
+  // Use light theme map tiles
   const tileUrl =
-    theme === "dark"
-      ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-      : "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
+    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png";
 
   return (
     <MapContainer

@@ -74,10 +74,10 @@ export default function DashboardPage() {
         {/* Header */}
         <div className="flex justify-between items-start mb-4">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">
               Fleet Overview
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 mt-1">
+            <p className="text-gray-500 mt-1">
               Real-time status of your school transportation
             </p>
           </div>
@@ -89,7 +89,7 @@ export default function DashboardPage() {
                 minute: "2-digit",
               })}
             </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300 font-bold uppercase tracking-widest">
+            <p className="text-sm text-gray-600 font-bold uppercase tracking-widest">
               {new Date().toLocaleDateString("en-US", {
                 weekday: "long",
                 month: "short",
@@ -106,7 +106,7 @@ export default function DashboardPage() {
               key={index}
               onClick={() => router.push(stat.href)}
               style={{ animationDelay: `${index * 100}ms` }}
-              className="group relative overflow-hidden rounded-2xl p-3 shadow-lg bg-white dark:bg-gray-900/80  border border-gray-200 hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-bottom-4"
+              className="group relative overflow-hidden rounded-2xl p-3 shadow-lg bg-white border border-gray-200 hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-bottom-4"
             >
               {/* Gradient Background on Hover */}
               <div
@@ -124,7 +124,7 @@ export default function DashboardPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <p className="text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                  <p className="text-sm font-bold text-gray-600 uppercase tracking-wide">
                     {stat.label}
                   </p>
                   <p
@@ -145,7 +145,7 @@ export default function DashboardPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           {/* Recent Activity */}
-          <div className="shadow-lg relative overflow-hidden rounded-2xl p-2 bg-white dark:bg-gray-900/80  border border-gray-200">
+          <div className="shadow-lg relative overflow-hidden rounded-2xl p-2 bg-white border border-gray-200">
             <div className="absolute top-0 right-0 w-40 h-40 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
 
             <div className="relative z-10">
@@ -166,20 +166,20 @@ export default function DashboardPage() {
                   <div
                     key={i}
                     style={{ animationDelay: `${i * 100}ms` }}
-                    className="flex items-center space-x-4 p-3 rounded-xl bg-linear-to-r from-gray-100/50 to-gray-200/50 dark:from-gray-800/50 dark:to-gray-700/50  border border-gray-200/10 hover:shadow-lg transition-all duration-300 hover:scale-102 animate-in fade-in slide-in-from-left-4"
+                    className="flex items-center space-x-4 p-3 rounded-xl bg-linear-to-r from-gray-100/50 to-gray-200/50 border border-gray-200/10 hover:shadow-lg transition-all duration-300 hover:scale-102 animate-in fade-in slide-in-from-left-4"
                   >
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-cyan-500/50">
                       <Clock size={18} className="text-white" />
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-bold text-gray-900 dark:text-white">
+                      <p className="text-sm font-bold text-gray-900">
                         Bus{" "}
                         <span className="text-transparent bg-gradient-to-br from-indigo-500 to-purple-500 bg-clip-text">
                           {bus.number}
                         </span>{" "}
                         updated status
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                      <p className="text-xs text-gray-500 font-medium">
                         {bus.lastUpdated}
                       </p>
                     </div>
@@ -201,7 +201,7 @@ export default function DashboardPage() {
           </div>
 
           {/* Route Insights */}
-          <div className="relative overflow-hidden rounded-2xl p-2 bg-white dark:bg-gray-900/80  border border-gray-200 shadow-xl">
+          <div className="relative overflow-hidden rounded-2xl p-2 bg-white border border-gray-200 shadow-xl">
             <div className="absolute top-0 left-0 w-40 h-40 bg-linear-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
 
             <div className="relative z-10">
@@ -223,12 +223,12 @@ export default function DashboardPage() {
                   <div
                     key={i}
                     style={{ animationDelay: `${i * 100}ms` }}
-                    className="space-y-3 p-3 rounded-xl bg-linear-to-r from-gray-100/50 to-gray-200/50 dark:from-gray-800/50 dark:to-gray-700/50  border border-gray-200/10 hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-right-4"
+                    className="space-y-3 p-3 rounded-xl bg-linear-to-r from-gray-100/50 to-gray-200/50 border border-gray-200/10 hover:shadow-lg transition-all duration-300 animate-in fade-in slide-in-from-right-4"
                   >
                     <div className="flex justify-between items-center">
                       <span
                         onClick={() => router.push("/routes")}
-                        className="font-bold text-gray-900 dark:text-white hover:text-transparent hover:bg-linear-to-r hover:from-purple-400 hover:to-pink-400 hover:bg-clip-text cursor-pointer transition-all duration-300"
+                        className="font-bold text-gray-900 hover:text-transparent hover:bg-linear-to-r hover:from-purple-400 hover:to-pink-400 hover:bg-clip-text cursor-pointer transition-all duration-300"
                       >
                         {route.name}
                       </span>
@@ -236,7 +236,7 @@ export default function DashboardPage() {
                         {route.studentCount} Students
                       </span>
                     </div>
-                    <div className="relative w-full h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner">
+                    <div className="relative w-full h-3 bg-gray-200 rounded-full overflow-hidden shadow-inner">
                       <div
                         className="absolute inset-y-0 left-0 bg-linear-to-r from-indigo-500 to-purple-500 rounded-full shadow-lg transition-all duration-1000 ease-out"
                         style={{ width: `${(route.studentCount / 30) * 100}%` }}
