@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -12,7 +11,6 @@ import {
   User,
 } from "lucide-react";
 import { useAuth } from "@/src/context/AuthContext";
-import ThemeToggle from "./ThemeToggle";
 
 const menuItems = [
   { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
@@ -28,78 +26,77 @@ export default function Sidebar() {
   const { logout, user } = useAuth();
 
   return (
-    <aside className="w-64 h-screen fixed left-0 top-0 z-30 flex flex-col border-r border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80  transition-all duration-300">
+    <aside className="w-64 bg-linear-to-br from-indigo-500 via-purple-500 to-purple-600 text-white flex flex-col h-screen shadow-2xl fixed left-0 top-0 z-30">
       {/* Header */}
-      <div className="mb-4 p-3 flex items-center justify-between">
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white">
-            <Bus size={18} fill="currentColor" className="text-white/90" />
-          </span>
-          School Fleet
-        </h1>
+      <div className="p-3 border-b border-white/20">
+        <div className="flex items-center gap-3">
+          <div className="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-lg">
+            <Bus className="w-6 h-6 text-purple-600" />
+          </div>
+          <h1 className="text-2xl font-bold tracking-tight">School Fleet</h1>
+        </div>
       </div>
 
       {/* Nav */}
-      <nav className="flex-1 px-4 space-y-1.5 overflow-y-auto custom-scrollbar">
-        <div className="px-2 mb-2 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
+      <nav className="flex-1 p-3 ">
+        <p className="text-xs font-semibold text-white/70 uppercase tracking-wider mb-4 px-3">
           Main Menu
-        </div>
-        {menuItems.map((item) => {
-          const isActive = pathname === item.href;
-          const Icon = item.icon;
-
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`group relative flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 ${
-                isActive
-                  ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 shadow-xs"
-                  : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white"
-              }`}
-            >
-              {isActive && (
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-blue-500 rounded-r-full"></div>
-              )}
-
-              <Icon
-                size={20}
-                className={`transition-colors duration-200 ${
-                  isActive
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300"
-                }`}
-              />
-              <span className="font-medium text-sm">{item.label}</span>
-            </Link>
-          );
-        })}
+        </p>
+        <ul className="space-y-2">
+          {menuItems.map((item) => {
+            const isActive = pathname === item.href;
+            const Icon = item.icon;
+            return (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={`
+                    relative flex items-center gap-3 px-4 py-3.5 rounded-2xl
+                    transition-all duration-200 group
+                    ${
+                      isActive
+                        ? "bg-white text-purple-600 shadow-xl font-semibold"
+                        : "text-white/90 hover:bg-white/15 hover:translate-x-1"
+                    }
+                  `}
+                >
+                  {isActive && (
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-10 bg-linear-to-b from-purple-500 to-pink-500 rounded-r-full" />
+                  )}
+                  <Icon
+                    className={`w-5 h-5 ${isActive ? "" : "group-hover:scale-110 transition-transform"}`}
+                  />
+                  <span className="font-medium">{item.label}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </nav>
 
       {/* Footer */}
-      <div className="p-3 border-t border-gray-200 dark:border-gray-800 space-y-2 bg-gray-50/50 dark:bg-gray-800/10">
+      <div className="p-3 space-y-3 border-t border-white/20">
         {/* User card */}
-        <div className="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm">
-          <div className="h-10 w-10 rounded-full bg-linear-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white ring-2 ring-white dark:ring-gray-800 shadow-sm">
-            {user?.name?.[0]?.toUpperCase() || <User size={18} />}
-          </div>
-          <div className="min-w-0 flex-1">
-            <p className="text-sm font-bold text-gray-900 dark:text-white truncate">
-              {user?.name || "User Administrator"}
+        <div className="bg-white/15  rounded-2xl p-2 shadow-lg">
+          <div className="flex items-center justify-between gap-1">
+            <div className="w-8 h-8 bg-linear-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
+              {user?.name?.[0]?.toUpperCase() || <User className="w-6 h-6" />}
+            </div>
+
+            <p className="font-semibold text-white truncate">
+              {user?.name || "Admin User"}
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-              {user?.role || "Fleet Manager"}
-            </p>
+
+            <button
+              onClick={logout}
+              className="flex items-center justify-center gap-2 p-2 rounded-2xl
+                   bg-white/10 hover:bg-red-500 text-white
+                   transition-all duration-200 font-medium hover:shadow-lg group"
+            >
+              <LogOut className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+            </button>
           </div>
         </div>
-
-        <button
-          onClick={logout}
-          className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
-        >
-          <LogOut size={16} />
-          Sign Out
-        </button>
       </div>
     </aside>
   );

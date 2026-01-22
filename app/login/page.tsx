@@ -47,7 +47,7 @@ export default function LoginPage() {
       >
         <div className="relative bg-linear-to-br from-white to-white/90 dark:from-gray-900 dark:to-gray-800 rounded-3xl shadow-2xl border-2 border-gray-200/30 dark:border-gray-700/30  overflow-hidden">
           {/* Top accent bar */}
-          <div className="absolute top-0 left-0 right-0 h-2 bg-linear-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+          <div className="absolute top-0 left-0 right-0 h-2 bg-linear-to-r from-indigo-500 via-purple-500 to-purple-500"></div>
 
           {/* Shine effect */}
           <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full animate-shimmer"></div>
@@ -68,12 +68,12 @@ export default function LoginPage() {
                   }}
                   className="relative"
                 >
-                  <div className="w-12 h-12 rounded-full bg-linear-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-linear-to-r from-indigo-500 to-purple-500 flex items-center justify-center">
                     <Bus className="w-6 h-6 text-white" />
                   </div>
                   <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-yellow-400" />
                 </motion.div>
-                <h1 className="text-4xl font-black bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <h1 className="text-4xl font-black bg-linear-to-r from-indigo-600 via-purple-600 to-purple-600 bg-clip-text text-transparent">
                   SCHOOL FLEET
                 </h1>
               </div>
@@ -172,7 +172,7 @@ export default function LoginPage() {
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-4 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-black rounded-2xl transition-all duration-300 disabled:opacity-50 shadow-2xl shadow-blue-500/30 relative overflow-hidden group"
+                className="w-full py-4 bg-linear-to-r from-indigo-600 via-purple-600 to-purple-700 hover:from-indigo-700 hover:via-purple-700 hover:to-purple-800 text-white font-black rounded-2xl transition-all duration-300 disabled:opacity-50 shadow-2xl shadow-indigo-500/30 relative overflow-hidden group"
               >
                 {/* Button shine effect */}
                 <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>

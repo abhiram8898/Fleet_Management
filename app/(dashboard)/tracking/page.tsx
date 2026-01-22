@@ -180,11 +180,11 @@ export default function TrackingPage() {
         <div className="absolute top-3 right-4 z-10 flex flex-col space-y-2">
           <button
             onClick={() => alert("Recitering map...")}
-            className="p-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all shadow-lg border border-gray-200 dark:border-gray-700"
+            className="p-3 bg-white/90 dark:bg-gray-900/90  rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all shadow-lg border border-gray-200 dark:border-gray-700"
           >
             <Navigation size={20} />
           </button>
-          <button className="p-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all shadow-lg border border-gray-200 dark:border-gray-700">
+          <button className="p-3 bg-white/90 dark:bg-gray-900/90  rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all shadow-lg border border-gray-200 dark:border-gray-700">
             <Bus size={20} />
           </button>
         </div>

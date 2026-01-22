@@ -83,7 +83,7 @@ export default function DashboardPage() {
           </div>
 
           <div className="text-right hidden md:block bg-linear-to-br from-indigo-500/20 to-purple-500/20  p-2 rounded-2xl border border-gray-200/20">
-            <p className="text-lg font-black text-transparent bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text">
+            <p className="text-md font-black text-transparent bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text">
               {new Date().toLocaleTimeString("en-US", {
                 hour: "2-digit",
                 minute: "2-digit",
@@ -150,12 +150,12 @@ export default function DashboardPage() {
 
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-black bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <h3 className="text-lg font-black bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
                   Recent Activity
                 </h3>
                 <button
                   onClick={() => router.push("/buses")}
-                  className="px-4 py-2 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 text-white font-bold text-sm hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
+                  className="px-4 py-2 rounded-lg bg-linear-to-r from-indigo-500 to-purple-500 text-white font-bold text-sm hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105"
                 >
                   View All
                 </button>
@@ -168,13 +168,13 @@ export default function DashboardPage() {
                     style={{ animationDelay: `${i * 100}ms` }}
                     className="flex items-center space-x-4 p-3 rounded-xl bg-linear-to-r from-gray-100/50 to-gray-200/50 dark:from-gray-800/50 dark:to-gray-700/50  border border-gray-200/10 hover:shadow-lg transition-all duration-300 hover:scale-102 animate-in fade-in slide-in-from-left-4"
                   >
-                    <div className="w-12 h-12 rounded-full bg-linear-to-br from-cyan-400 to-blue-500 flex items-center justify-center shadow-lg shadow-cyan-500/50">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-cyan-500/50">
                       <Clock size={18} className="text-white" />
                     </div>
                     <div className="flex-1">
                       <p className="text-sm font-bold text-gray-900 dark:text-white">
                         Bus{" "}
-                        <span className="text-transparent bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text">
+                        <span className="text-transparent bg-gradient-to-br from-indigo-500 to-purple-500 bg-clip-text">
                           {bus.number}
                         </span>{" "}
                         updated status
@@ -206,13 +206,13 @@ export default function DashboardPage() {
 
             <div className="relative z-10">
               <div className="flex justify-between items-center gap-3 mb-4">
-                <h3 className="text-lg font-black bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <h3 className="text-lg font-black bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
                   Route Insights
                 </h3>
 
                 <button
                   onClick={() => router.push("/routes")}
-                  className="px-4 py-2 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 text-white font-bold text-sm hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
+                  className="px-4 py-2 rounded-lg bg-linear-to-r from-indigo-500 to-purple-500 text-white font-bold text-sm hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105"
                 >
                   View All
                 </button>
@@ -238,7 +238,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative w-full h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-inner">
                       <div
-                        className="absolute inset-y-0 left-0 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full shadow-lg transition-all duration-1000 ease-out"
+                        className="absolute inset-y-0 left-0 bg-linear-to-r from-indigo-500 to-purple-500 rounded-full shadow-lg transition-all duration-1000 ease-out"
                         style={{ width: `${(route.studentCount / 30) * 100}%` }}
                       >
                         <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
