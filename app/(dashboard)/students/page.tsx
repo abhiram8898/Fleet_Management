@@ -185,7 +185,7 @@ export default function StudentsPage() {
               resetForm();
               setIsModalOpen(true);
             }}
-            className="bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center shadow-lg shadow-indigo-500/20 active:scale-95 transition-all"
+            className="bg-gradient-primary text-white px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center shadow-lg shadow-primary-soft active:scale-95 transition-all hover:opacity-90"
           >
             <Plus size={18} className="mr-2" />
             Register Student
@@ -203,7 +203,7 @@ export default function StudentsPage() {
               placeholder="Search by name or student ID..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-sm text-gray-900 placeholder:text-gray-400 shadow-sm"
+              className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm text-gray-900 placeholder:text-gray-400 shadow-sm"
             />
           </div>
           <div className="relative">
@@ -213,7 +213,7 @@ export default function StudentsPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="appearance-none pl-10 pr-10 py-3 bg-white border border-gray-200 rounded-xl outline-none cursor-pointer text-sm font-medium text-gray-900 shadow-sm focus:ring-2 focus:ring-indigo-500/50 transition-all min-w-[160px]"
+              className="appearance-none pl-10 pr-10 py-3 bg-white border border-gray-200 rounded-xl outline-none cursor-pointer text-sm font-medium text-gray-900 shadow-sm focus:ring-2 focus:ring-primary/50 transition-all min-w-[160px]"
             >
               <option value="All">All Statuses</option>
               <option value="Picked">Picked</option>
@@ -228,15 +228,15 @@ export default function StudentsPage() {
           {filteredStudents.map((student) => (
             <div
               key={student.id}
-              className="group bg-white/80 p-3 rounded-2xl border border-gray-200 hover:border-indigo-500/50 hover:shadow-lg transition-all duration-300 flex flex-col space-y-4"
+              className="group bg-white p-3 rounded-xl border border-gray-200 border-l-4 border-l-primary shadow-sm hover:shadow-md transition-all duration-300 flex flex-col space-y-3"
             >
               <div className="flex justify-between items-start">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/20">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-primary flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary-soft">
                     {student.name[0]}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
                       {student.name}
                     </h3>
                     <div className="flex items-center text-xs text-gray-500 font-medium space-x-2 mt-0.5">
@@ -262,7 +262,7 @@ export default function StudentsPage() {
                 </span>
               </div>
 
-              <div className="p-3 bg-gray-50/50 rounded-xl space-y-2.5 border border-gray-100">
+              <div className="p-2.5 bg-gray-100 rounded-lg space-y-2 border border-gray-100">
                 <div className="flex justify-between text-xs">
                   <span className="text-gray-500 font-medium">Bus ID</span>
                   <span className="text-gray-900 font-semibold">
@@ -287,7 +287,7 @@ export default function StudentsPage() {
                 <div className="flex space-x-2">
                   <button
                     onClick={() => handleContact(student.name, "mail")}
-                    className="p-2 bg-gray-100 hover:bg-indigo-500 hover:text-white rounded-lg text-gray-500 transition-colors"
+                    className="p-2 bg-gray-100 hover:bg-primary hover:text-white rounded-lg text-gray-500 transition-colors"
                   >
                     <Mail size={16} />
                   </button>
@@ -343,7 +343,7 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
                 placeholder="e.g. John Doe"
                 required
               />
@@ -358,7 +358,7 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, grade: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
                 placeholder="e.g. 10th"
                 required
               />
@@ -373,7 +373,7 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, parentName: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
                 placeholder="e.g. Robert Doe"
               />
             </div>
@@ -387,7 +387,7 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, parentContact: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
                 placeholder="+91..."
               />
             </div>
@@ -401,7 +401,7 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
                 placeholder="parent@example.com"
               />
             </div>
@@ -414,7 +414,7 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, busId: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
               >
                 <option value="">Select a Bus</option>
                 {busesData.map((bus) => (
@@ -435,7 +435,7 @@ export default function StudentsPage() {
               onChange={(e) =>
                 setFormData({ ...formData, address: e.target.value })
               }
-              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
+              className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
               rows={2}
               placeholder="e.g. 123 Main St, Springfield"
             />
@@ -452,7 +452,7 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, pickup: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
                 placeholder="e.g. Stop A"
               />
             </div>
@@ -466,7 +466,7 @@ export default function StudentsPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, drop: e.target.value })
                 }
-                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-gray-900"
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
                 placeholder="e.g. Stop B"
               />
             </div>
@@ -478,7 +478,7 @@ export default function StudentsPage() {
               id="sameAsPickup"
               checked={isDropSameAsPickup}
               onChange={(e) => setIsDropSameAsPickup(e.target.checked)}
-              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
             />
             <label
               htmlFor="sameAsPickup"
@@ -498,7 +498,7 @@ export default function StudentsPage() {
             </button>
             <button
               type="submit"
-              className="flex-1 py-3 bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold rounded-xl text-sm shadow-lg shadow-indigo-500/20 active:scale-95 transition-all"
+              className="flex-1 py-3 bg-gradient-primary text-white font-bold rounded-xl text-sm shadow-lg shadow-primary-soft active:scale-95 transition-all hover:opacity-90"
             >
               {editingStudent ? "Update Student" : "Register Student"}
             </button>

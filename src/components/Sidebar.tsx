@@ -26,12 +26,12 @@ export default function Sidebar() {
   const { logout, user } = useAuth();
 
   return (
-    <aside className="w-64 bg-linear-to-br from-indigo-500 via-purple-500 to-purple-600 text-white flex flex-col h-screen shadow-2xl fixed left-0 top-0 z-30">
+    <aside className="w-64 bg-gradient-primary text-white flex flex-col h-screen shadow-2xl fixed left-0 top-0 z-30">
       {/* Header */}
       <div className="p-3 border-b border-white/20">
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-lg">
-            <Bus className="w-6 h-6 text-purple-600" />
+            <Bus className="w-6 h-6 text-primary" />
           </div>
           <h1 className="text-2xl font-bold tracking-tight">School Fleet</h1>
         </div>
@@ -55,13 +55,13 @@ export default function Sidebar() {
                     transition-all duration-200 group
                     ${
                       isActive
-                        ? "bg-white text-purple-600 shadow-xl font-semibold"
+                        ? "bg-white text-primary shadow-xl font-semibold"
                         : "text-white/90 hover:bg-white/15 hover:translate-x-1"
                     }
                   `}
                 >
                   {isActive && (
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-10 bg-linear-to-b from-purple-500 to-pink-500 rounded-r-full" />
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-10 bg-gradient-primary rounded-r-full" />
                   )}
                   <Icon
                     className={`w-5 h-5 ${isActive ? "" : "group-hover:scale-110 transition-transform"}`}
@@ -79,7 +79,7 @@ export default function Sidebar() {
         {/* User card */}
         <div className="bg-white/15  rounded-2xl p-2 shadow-lg">
           <div className="flex items-center justify-between gap-1">
-            <div className="w-8 h-8 bg-linear-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
+            <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md">
               {user?.name?.[0]?.toUpperCase() || <User className="w-6 h-6" />}
             </div>
 

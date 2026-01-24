@@ -162,7 +162,7 @@ export default function RoutesPage() {
               resetForm();
               setIsModalOpen(true);
             }}
-            className="bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center shadow-lg shadow-indigo-500/20 active:scale-95 transition-all"
+            className="bg-gradient-primary text-white px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center shadow-lg shadow-primary-soft active:scale-95 transition-all hover:opacity-90"
           >
             <Plus size={18} className="mr-2" />
             Create New Route
@@ -179,7 +179,7 @@ export default function RoutesPage() {
             <input
               type="text"
               placeholder="Search routes..."
-              className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-sm text-gray-900 placeholder:text-gray-400 shadow-sm"
+              className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm text-gray-900 placeholder:text-gray-400 shadow-sm"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -190,15 +190,15 @@ export default function RoutesPage() {
           {filteredRoutes.map((route) => (
             <div
               key={route.id}
-              className="group bg-white/80 p-3 rounded-2xl border border-gray-200 hover:border-indigo-500/50 hover:shadow-lg transition-all duration-300 flex flex-col space-y-4"
+              className="group bg-white/80 p-3 rounded-2xl border border-gray-200 hover:border-primary-soft hover:shadow-lg transition-all duration-300 flex flex-col space-y-4"
             >
               <div className="flex justify-between items-start">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white shadow-lg shadow-purple-500/20">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-primary flex items-center justify-center text-white shadow-lg shadow-primary-soft">
                     <RouteIcon size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
                       {route.name}
                     </h3>
                     <div className="flex items-center space-x-3 mt-1.5">
@@ -233,13 +233,13 @@ export default function RoutesPage() {
                       key={index}
                       className="relative flex items-center justify-between group/stop pl-6 py-2"
                     >
-                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white border-2 border-indigo-500 shadow-sm z-10 group-hover/stop:scale-125 transition-transform"></div>
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white border-2 border-primary shadow-sm z-10 group-hover/stop:scale-125 transition-transform"></div>
                       <div className="flex-1 min-w-0 mr-4">
                         <p className="text-sm font-semibold text-gray-900 truncate">
                           {stop.name}
                         </p>
                       </div>
-                      <div className="flex items-center text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-1 rounded-lg">
+                      <div className="flex items-center text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-lg">
                         <Clock size={12} className="mr-1" />
                         {stop.time}
                       </div>
@@ -251,7 +251,7 @@ export default function RoutesPage() {
               <div className="pt-2">
                 <button
                   onClick={() => router.push(`/tracking?busId=${route.busId}`)}
-                  className="w-full py-2.5 bg-gray-100 text-gray-700 font-bold rounded-xl text-xs hover:bg-indigo-500 hover:text-white transition-all flex items-center justify-center shadow-sm"
+                  className="w-full py-2.5 bg-gray-100 text-gray-700 font-bold rounded-xl text-xs hover:bg-primary hover:text-white transition-all flex items-center justify-center shadow-sm"
                 >
                   <MapPin size={14} className="mr-1.5" /> View Live Map
                 </button>
@@ -274,7 +274,7 @@ export default function RoutesPage() {
                 type="text"
                 value={routeName}
                 onChange={(e) => setRouteName(e.target.value)}
-                className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
+                className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
                 placeholder="e.g. Kakkanad Express"
                 required
               />
@@ -286,7 +286,7 @@ export default function RoutesPage() {
               <select
                 value={selectedBusId}
                 onChange={(e) => setSelectedBusId(e.target.value)}
-                className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-gray-900"
+                className="w-full p-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-gray-900"
                 required
               >
                 <option value="">Select a Bus</option>
@@ -303,7 +303,7 @@ export default function RoutesPage() {
                 <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider">
                   Route Stops
                 </label>
-                <span className="text-[10px] bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full font-bold">
+                <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold">
                   {stops.length} Stops
                 </span>
               </div>
@@ -314,7 +314,7 @@ export default function RoutesPage() {
                     key={idx}
                     className="flex items-center space-x-3 bg-gray-50 p-2.5 rounded-xl border border-gray-100"
                   >
-                    <div className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-xs font-bold">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs font-bold">
                       {idx + 1}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -351,7 +351,7 @@ export default function RoutesPage() {
                   onChange={(e) =>
                     setNewStop({ ...newStop, name: e.target.value })
                   }
-                  className="col-span-2 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:border-indigo-500/50"
+                  className="col-span-2 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:border-primary/50"
                 />
                 <input
                   type="time"
@@ -359,7 +359,7 @@ export default function RoutesPage() {
                   onChange={(e) =>
                     setNewStop({ ...newStop, time: e.target.value })
                   }
-                  className="px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:border-indigo-500/50"
+                  className="px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:border-primary/50"
                 />
                 <div className="flex space-x-2">
                   <input
@@ -369,7 +369,7 @@ export default function RoutesPage() {
                     onChange={(e) =>
                       setNewStop({ ...newStop, lat: e.target.value })
                     }
-                    className="w-1/2 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:border-indigo-500/50"
+                    className="w-1/2 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:border-primary/50"
                   />
                   <input
                     type="text"
@@ -378,7 +378,7 @@ export default function RoutesPage() {
                     onChange={(e) =>
                       setNewStop({ ...newStop, lng: e.target.value })
                     }
-                    className="w-1/2 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:border-indigo-500/50"
+                    className="w-1/2 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:outline-none focus:border-primary/50"
                   />
                 </div>
               </div>
@@ -404,7 +404,7 @@ export default function RoutesPage() {
               </button>
               <button
                 type="submit"
-                className="flex-1 py-3 bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold rounded-xl text-sm shadow-lg shadow-indigo-500/20 active:scale-95 transition-all"
+                className="flex-1 py-3 bg-gradient-primary text-white font-bold rounded-xl text-sm shadow-lg shadow-primary-soft active:scale-95 transition-all hover:opacity-90"
               >
                 {editingRouteId ? "Update Route" : "Create Route"}
               </button>

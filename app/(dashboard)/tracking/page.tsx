@@ -12,7 +12,7 @@ const TrackingMap = dynamic(() => import("@/src/components/TrackingMap"), {
   loading: () => (
     <div className="w-full h-full bg-gray-50 flex items-center justify-center rounded-2xl animate-pulse">
       <div className="text-gray-400 flex flex-col items-center">
-        <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+        <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
         <p>Loading Live Map...</p>
       </div>
     </div>
@@ -69,7 +69,7 @@ export default function TrackingPage() {
             <input
               type="text"
               placeholder="Find bus..."
-              className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              className="w-full pl-9 pr-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
           </div>
 
@@ -80,20 +80,20 @@ export default function TrackingPage() {
                 onClick={() => router.push(`/tracking?busId=${bus.id}`)}
                 className={`w-full p-3 rounded-xl text-left transition-all border ${
                   activeBusId === bus.id
-                    ? "bg-blue-50 border-blue-200 shadow-sm"
+                    ? "bg-primary/5 border-primary-soft shadow-sm"
                     : "bg-transparent border-transparent hover:bg-gray-50"
                 }`}
               >
                 <div className="flex justify-between items-start mb-1">
                   <span
                     className={`font-bold text-sm ${
-                      activeBusId === bus.id ? "text-blue-600" : "text-gray-900"
+                      activeBusId === bus.id ? "text-primary" : "text-gray-900"
                     }`}
                   >
                     {bus.number}
                   </span>
                   {activeBusId === bus.id && (
-                    <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                   )}
                 </div>
                 <div className="flex justify-between items-center">
@@ -115,7 +115,7 @@ export default function TrackingPage() {
             </h4>
             <div className="space-y-3">
               <div className="flex items-center p-3 bg-white rounded-xl border border-gray-100 shadow-sm">
-                <div className="p-2 bg-blue-50 rounded-lg mr-3 text-blue-600">
+                <div className="p-2 bg-primary/10 rounded-lg mr-3 text-primary">
                   <Gauge size={18} />
                 </div>
                 <div>
@@ -140,7 +140,7 @@ export default function TrackingPage() {
                 </div>
               </div>
               <div className="flex items-center p-3 bg-white rounded-xl border border-gray-100 shadow-sm">
-                <div className="p-2 bg-purple-50 rounded-lg mr-3 text-purple-600">
+                <div className="p-2 bg-primary/10 rounded-lg mr-3 text-primary">
                   <Clock size={18} />
                 </div>
                 <div>

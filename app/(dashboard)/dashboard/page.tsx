@@ -34,9 +34,9 @@ export default function DashboardPage() {
       label: "Total Routes",
       value: routes.length,
       icon: Route,
-      color: "text-purple-400",
-      gradient: "from-purple-500 via-pink-500 to-rose-500",
-      glowColor: "shadow-purple-500/50",
+      color: "text-orange-400",
+      gradient: "from-orange-500 via-amber-500 to-yellow-500",
+      glowColor: "shadow-primary-soft",
       href: "/routes",
     },
     {
@@ -82,8 +82,8 @@ export default function DashboardPage() {
             </p>
           </div>
 
-          <div className="text-right hidden md:block bg-linear-to-br from-indigo-500/20 to-purple-500/20  p-2 rounded-2xl border border-gray-200/20">
-            <p className="text-md font-black text-transparent bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text">
+          <div className="text-right hidden md:block bg-primary/10  p-2 rounded-2xl border border-gray-200/20">
+            <p className="text-md font-black text-gradient-primary">
               {new Date().toLocaleTimeString("en-US", {
                 hour: "2-digit",
                 minute: "2-digit",
@@ -146,16 +146,16 @@ export default function DashboardPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           {/* Recent Activity */}
           <div className="shadow-lg relative overflow-hidden rounded-2xl p-2 bg-white border border-gray-200">
-            <div className="absolute top-0 right-0 w-40 h-40 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-40 h-40 bg-linear-to-br from-blue-500/20 to-green-500/20 rounded-full blur-3xl"></div>
 
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-black bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                <h3 className="text-lg font-black text-gradient-primary">
                   Recent Activity
                 </h3>
                 <button
                   onClick={() => router.push("/buses")}
-                  className="px-4 py-2 rounded-lg bg-linear-to-r from-indigo-500 to-purple-500 text-white font-bold text-sm hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105"
+                  className="px-4 py-2 rounded-lg bg-gradient-primary text-white font-bold text-sm hover:shadow-lg hover:shadow-primary-soft transition-all duration-300 hover:scale-105"
                 >
                   View All
                 </button>
@@ -202,17 +202,17 @@ export default function DashboardPage() {
 
           {/* Route Insights */}
           <div className="relative overflow-hidden rounded-2xl p-2 bg-white border border-gray-200 shadow-xl">
-            <div className="absolute top-0 left-0 w-40 h-40 bg-linear-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 left-0 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
 
             <div className="relative z-10">
               <div className="flex justify-between items-center gap-3 mb-4">
-                <h3 className="text-lg font-black bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                <h3 className="text-lg font-black text-gradient-primary">
                   Route Insights
                 </h3>
 
                 <button
                   onClick={() => router.push("/routes")}
-                  className="px-4 py-2 rounded-lg bg-linear-to-r from-indigo-500 to-purple-500 text-white font-bold text-sm hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105"
+                  className="px-4 py-2 rounded-lg bg-gradient-primary text-white font-bold text-sm hover:shadow-lg hover:shadow-primary-soft transition-all duration-300 hover:scale-105"
                 >
                   View All
                 </button>
@@ -228,17 +228,17 @@ export default function DashboardPage() {
                     <div className="flex justify-between items-center">
                       <span
                         onClick={() => router.push("/routes")}
-                        className="font-bold text-gray-900 hover:text-transparent hover:bg-linear-to-r hover:from-purple-400 hover:to-pink-400 hover:bg-clip-text cursor-pointer transition-all duration-300"
+                        className="font-bold text-gray-900 hover:text-primary cursor-pointer transition-all duration-300"
                       >
                         {route.name}
                       </span>
-                      <span className="px-3 py-1 rounded-full bg-linear-to-r from-indigo-500 to-purple-500 text-white text-xs font-black shadow-lg shadow-indigo-500/50">
+                      <span className="px-3 py-1 rounded-full bg-gradient-primary text-white text-xs font-black shadow-lg shadow-primary-soft">
                         {route.studentCount} Students
                       </span>
                     </div>
                     <div className="relative w-full h-3 bg-gray-200 rounded-full overflow-hidden shadow-inner">
                       <div
-                        className="absolute inset-y-0 left-0 bg-linear-to-r from-indigo-500 to-purple-500 rounded-full shadow-lg transition-all duration-1000 ease-out"
+                        className="absolute inset-y-0 left-0 bg-gradient-primary rounded-full shadow-lg transition-all duration-1000 ease-out"
                         style={{ width: `${(route.studentCount / 30) * 100}%` }}
                       >
                         <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
